@@ -1,9 +1,9 @@
-package com.nineworanop.starter.service;
+package com.nineworanop.examplebackend01.service;
 
 import org.springframework.stereotype.Service;
 
-import com.nineworanop.starter.dto.Point;
-import com.nineworanop.starter.dto.PointsOfTriangle;
+import com.nineworanop.examplebackend01.dto.Point;
+import com.nineworanop.examplebackend01.dto.PointsOfTriangle;
 
 @Service
 public class MathServiceImpl implements MathService {

@@ -1,4 +1,4 @@
-package com.nineworanop.starter.rest;
+package com.nineworanop.examplebackend01.rest;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.doReturn;
@@ -18,9 +18,9 @@ import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.nineworanop.starter.dto.Point;
-import com.nineworanop.starter.dto.PointsOfTriangle;
-import com.nineworanop.starter.service.MathService;
+import com.nineworanop.examplebackend01.dto.Point;
+import com.nineworanop.examplebackend01.dto.PointsOfTriangle;
+import com.nineworanop.examplebackend01.service.MathService;
 
 @SpringBootTest
 @AutoConfigureMockMvc

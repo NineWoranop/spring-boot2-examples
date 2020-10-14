@@ -1,4 +1,4 @@
-package com.nineworanop.starter.dto;
+package com.nineworanop.examplebackend01.dto;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

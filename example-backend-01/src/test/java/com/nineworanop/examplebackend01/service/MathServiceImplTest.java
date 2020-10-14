@@ -1,4 +1,4 @@
-package com.nineworanop.starter.service;
+package com.nineworanop.examplebackend01.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -7,8 +7,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.nineworanop.starter.dto.Point;
-import com.nineworanop.starter.dto.PointsOfTriangle;
+import com.nineworanop.examplebackend01.dto.Point;
+import com.nineworanop.examplebackend01.dto.PointsOfTriangle;
 
 @SpringBootTest
 class MathServiceImplTest {

@@ -1,6 +1,6 @@
-package com.nineworanop.starter.service;
+package com.nineworanop.examplebackend01.service;
 
-import com.nineworanop.starter.dto.PointsOfTriangle;
+import com.nineworanop.examplebackend01.dto.PointsOfTriangle;
 
 public interface MathService {
 	Float areaOfTriangle(PointsOfTriangle points);
