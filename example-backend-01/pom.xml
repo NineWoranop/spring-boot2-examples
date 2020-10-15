@@ -23,7 +23,8 @@
 		<sonar.login>admin</sonar.login>
 		<sonar.password>admin</sonar.password>
 		<sonar.exclusions>
-			**/ExampleBackend01Application.java
+			**/ExampleBackend01Application.java,
+			**/config/*Config.java
 		</sonar.exclusions>
 	</properties>
 
@@ -80,6 +81,16 @@
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-boot-starter</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-engine</artifactId>
 			<scope>test</scope>
@@ -132,6 +143,7 @@
 				<configuration>
 					<excludes>
 						<exclude>**/ExampleBackend01Application.class</exclude>
+						<exclude>**/config/*Config.class</exclude>
 					</excludes>
 				</configuration>
 				<executions>
