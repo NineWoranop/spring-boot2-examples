@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;
 import org.springframework.stereotype.Repository;
 
-import com.nineworanop.examplebackend02.repo.entity.QStudentEntity;
 import com.nineworanop.examplebackend02.repo.entity.StudentEntity;
+import com.nineworanop.examplebackend02.repo.entity.querydsl.QStudentEntity;
 import com.querydsl.jpa.JPQLQuery;
 
 @Repository

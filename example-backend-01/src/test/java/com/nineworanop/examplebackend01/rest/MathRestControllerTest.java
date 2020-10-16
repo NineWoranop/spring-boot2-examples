@@ -37,23 +37,21 @@ class MathRestControllerTest {
 	private ObjectMapper objectMapper;
 
 	@Test
-	@DisplayName("POST /rest/math/area/triangle success")
+	@DisplayName("POST /api/math/area/triangle success")
 	void testAreaOfTriangleSuccess() throws Exception {
-		// Prepare input
+		// Given for input
 		PointsOfTriangle points = new PointsOfTriangle(new Point(13, 34), new Point(22, 21), new Point(11, 19));
 		String inputAsJson = objectMapper.writeValueAsString(points);
-
-		// Setup our mocked service
+		// Given for mock the service
 		final Float expectedResult = 80.5f;
 		doReturn(expectedResult).when(mockMathService).areaOfTriangle(points);
 
-		// Execute the POST request
-		mockMvc.perform(post("/rest/math/area/triangle").content(inputAsJson).contentType(MediaType.APPLICATION_JSON)
-				.accept(MediaType.APPLICATION_JSON))
-				// Validate the response code and content type
+		// When
+		mockMvc.perform(post("/api/math/area/triangle").content(inputAsJson).contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON))
+				// Then validate the response code and content type
 				.andExpect(status().isOk()).andExpect(content().contentType(MediaType.APPLICATION_JSON))
 
-				// Validate result
+				// Then validate result
 				.andExpect(mvcResult -> {
 					String actualStr = mvcResult.getResponse().getContentAsString();
 					Float actualResult = Float.valueOf(actualStr);
@@ -62,18 +60,18 @@ class MathRestControllerTest {
 	}
 
 	@Test
-	@DisplayName("GET /rest/math/plus success")
+	@DisplayName("GET /api/math/plus success")
 	void testPlusSuccess() throws Exception {
-		// Setup our mocked service
+		// Given for mock the service
 		final Integer expectedResult = 3;
 		doReturn(expectedResult).when(mockMathService).plus(1, 2);
 
-		// Execute the GET request
-		mockMvc.perform(get("/rest/math/plus?x=1&y=2"))
-				// Validate the response code and content type
+		// When
+		mockMvc.perform(get("/api/math/plus?x=1&y=2"))
+				// Then validate the response code and content type
 				.andExpect(status().isOk()).andExpect(content().contentType(MediaType.APPLICATION_JSON))
 
-				// Validate result
+				// Then validate result
 				.andExpect(mvcResult -> {
 					String actualStr = mvcResult.getResponse().getContentAsString();
 					Integer actualResult = Integer.valueOf(actualStr);

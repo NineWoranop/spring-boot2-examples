@@ -13,8 +13,7 @@ public class MathServiceImpl implements MathService {
 		final Point a = points.getA();
 		final Point b = points.getB();
 		final Point c = points.getC();
-		float area = (a.getX() * (b.getY() - c.getY()) + b.getX() * (c.getY() - a.getY())
-				+ c.getX() * (a.getY() - b.getY())) / 2.0f;
+		float area = (a.getX() * (b.getY() - c.getY()) + b.getX() * (c.getY() - a.getY()) + c.getX() * (a.getY() - b.getY())) / 2.0f;
 		return Math.abs(area);
 	}
 

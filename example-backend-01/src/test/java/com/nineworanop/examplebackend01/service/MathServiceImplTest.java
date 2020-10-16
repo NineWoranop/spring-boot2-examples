@@ -18,33 +18,31 @@ class MathServiceImplTest {
 	@Test
 	@DisplayName("Test areaOfTriangle Success")
 	void testAreaOfTriangle() {
-		// Prepare expected result
+		// Given for input
+		final PointsOfTriangle points = new PointsOfTriangle(new Point(13, 34), new Point(22, 21), new Point(11, 19));
+		// Given for expected result
 		final Float expectedResult = 80.5f;
 
-		// Prepare input
-		final PointsOfTriangle points = new PointsOfTriangle(new Point(13, 34), new Point(22, 21), new Point(11, 19));
-
-		// Execute the service call
+		// When
 		Float actualResult = service.areaOfTriangle(points);
 
-		// Assert the response
+		// Then
 		assertThat(actualResult).isEqualTo(expectedResult);
 	}
 
 	@Test
 	@DisplayName("Test plus Success")
 	void testFindById() {
-		// Prepare expected result
-		final Integer expectedResult = 13;
-
-		// Prepare input
+		// Given for input
 		final int x = 4;
 		final int y = 9;
+		// Given for expected result
+		final Integer expectedResult = 13;
 
-		// Execute the service call
+		// When
 		Integer actualResult = service.plus(x, y);
 
-		// Assert the response
+		// Then
 		assertThat(actualResult).isEqualTo(expectedResult);
 	}
 }

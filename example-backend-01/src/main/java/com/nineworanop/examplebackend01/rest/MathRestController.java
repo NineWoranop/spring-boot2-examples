@@ -12,7 +12,7 @@ import com.nineworanop.examplebackend01.dto.PointsOfTriangle;
 import com.nineworanop.examplebackend01.service.MathService;
 
 @RestController
-@RequestMapping("/rest/math")
+@RequestMapping("/api/math")
 public class MathRestController {
 
 	private final MathService mathService;
@@ -23,12 +23,12 @@ public class MathRestController {
 	}
 
 	@PostMapping(path = "/area/triangle")
-    public Float areaOfTriangle(@RequestBody PointsOfTriangle points) {
-        return mathService.areaOfTriangle(points);
-    }
+	public Float areaOfTriangle(@RequestBody PointsOfTriangle points) {
+		return mathService.areaOfTriangle(points);
+	}
 
-    @GetMapping(path = "/plus")
-    public Integer plus(@RequestParam("x") final Integer x, @RequestParam("y") final Integer y) {
-        return mathService.plus(x, y);
-    }
+	@GetMapping(path = "/plus")
+	public Integer plus(@RequestParam("x") final Integer x, @RequestParam("y") final Integer y) {
+		return mathService.plus(x, y);
+	}
 }
