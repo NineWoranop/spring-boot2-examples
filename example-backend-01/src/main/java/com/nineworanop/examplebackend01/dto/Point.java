@@ -1,13 +1,11 @@
 package com.nineworanop.examplebackend01.dto;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
-@Getter
+@Data
 @RequiredArgsConstructor
-@EqualsAndHashCode
 public class Point {
 	@NonNull
 	private Integer x;

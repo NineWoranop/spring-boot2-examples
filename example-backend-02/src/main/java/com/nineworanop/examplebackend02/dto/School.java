@@ -1,15 +1,13 @@
 package com.nineworanop.examplebackend02.dto;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-import lombok.ToString;
 
-@Getter
+@Data
 @RequiredArgsConstructor
-@EqualsAndHashCode
-@ToString
+@NoArgsConstructor(force = true)
 public class School {
 	@NonNull
 	private Long id;
@@ -17,8 +15,4 @@ public class School {
 	@NonNull
 	private String name;
 
-	public School() {
-		this.id = 0L;
-		this.name = "";
-	}
 }
