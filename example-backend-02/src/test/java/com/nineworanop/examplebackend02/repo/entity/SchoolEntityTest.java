@@ -13,6 +13,16 @@ import com.nineworanop.examplebackend02.dto.School;
 class SchoolEntityTest {
 
 	@Test
+	@DisplayName("SchoolEntity() success")
+	void testSchoolSuccess() {
+		// When
+		SchoolEntity actualResult = new SchoolEntity();
+
+		// Then
+		assertThat(actualResult).hasAllNullFieldsOrProperties();
+	}
+
+	@Test
 	@DisplayName("to() from Iterable<SchoolEntity> to List<School> success")
 	void testTo() throws Exception {
 		// Given for input

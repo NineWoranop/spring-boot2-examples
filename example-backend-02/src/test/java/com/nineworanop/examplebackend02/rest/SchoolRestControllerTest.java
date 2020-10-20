@@ -53,7 +53,8 @@ class SchoolRestControllerTest {
 				// Then validate result
 				.andExpect(mvcResult -> {
 					String actualStr = mvcResult.getResponse().getContentAsString();
-					TypeReference<List<School>> typeRef = new TypeReference<List<School>>() {};
+					TypeReference<List<School>> typeRef = new TypeReference<List<School>>() {
+					};
 					List<School> actualResult = objectMapper.readValue(actualStr, typeRef);
 					assertThat(actualResult).isEqualTo(expectedResult);
 				});

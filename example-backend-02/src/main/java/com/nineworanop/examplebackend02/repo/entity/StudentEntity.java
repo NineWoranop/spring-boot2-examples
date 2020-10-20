@@ -9,17 +9,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
-import lombok.Setter;
 import lombok.ToString;
 
 @Entity
 @Table(name = "students")
-@Getter
-@Setter
+@Data
 @NoArgsConstructor(force = true)
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)

@@ -38,8 +38,6 @@ class StudentQueryRepositoryTest {
 		List<StudentEntity> actualResult = repo.findAllStudentsBySchoolId(schoolId);
 
 		// Then
-		System.out.println("actualResult :" + actualResult);
-		System.out.println("expectedResult :" + expectedResult);
 		assertThat(actualResult).isEqualTo(expectedResult);
 	}
 }
