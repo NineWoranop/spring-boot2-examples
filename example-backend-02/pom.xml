@@ -22,6 +22,8 @@
 		<sonar.host.url>http://localhost:9000</sonar.host.url>
 		<sonar.login>admin</sonar.login>
 		<sonar.password>admin</sonar.password>
+		<sonar.projectKey>example-backend-02</sonar.projectKey>
+		<sonar.projectName>Example for Backend - 02</sonar.projectName>
 		<sonar.exclusions>
 			**/ExampleBackend02Application.java,
 			**/config/*Config.java,
