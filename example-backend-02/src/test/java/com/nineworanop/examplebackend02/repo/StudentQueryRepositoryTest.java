@@ -22,6 +22,12 @@ class StudentQueryRepositoryTest {
 
 	@Autowired
 	private StudentQueryRepository repo;
+	
+	private static LocalDateTime getDate(final String dateStr, final String pattern) {
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern);
+		LocalDateTime dateTime = LocalDateTime.parse(dateStr, formatter);
+		return dateTime;
+	}
 
 	@Test
 	@DisplayName("findAllStudentsBySchoolId success")
@@ -29,9 +35,9 @@ class StudentQueryRepositoryTest {
 		// Given for input
 		final Long schoolId = 1L;
 		// Given for expected result
-		String dateStr = "2010-01-01 00:00:00";
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-		LocalDateTime dateTime = LocalDateTime.parse(dateStr, formatter);
+		final String dateStr = "2010-01-01 00:00:00";
+		final String pattern = "yyyy-MM-dd HH:mm:ss";
+		final LocalDateTime dateTime = getDate(dateStr, pattern);
 		final List<StudentEntity> expectedResult = Arrays.asList(new StudentEntity(1l, 1l, "Student 1", dateTime, dateTime));
 
 		// When

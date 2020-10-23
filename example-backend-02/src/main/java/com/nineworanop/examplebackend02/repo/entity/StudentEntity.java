@@ -14,10 +14,12 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.ToString;
+import lombok.experimental.SuperBuilder;
 
 @Entity
 @Table(name = "students")
 @Data
+@SuperBuilder
 @NoArgsConstructor(force = true)
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)

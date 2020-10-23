@@ -14,12 +14,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
+import lombok.experimental.SuperBuilder;
 
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
 @Data
-@NoArgsConstructor(force = true)
+@SuperBuilder
 @AllArgsConstructor
+@NoArgsConstructor(force = true)
 public abstract class AbstractAuditingEntity {
 
 	@CreatedDate
