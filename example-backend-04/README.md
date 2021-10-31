@@ -1,6 +1,6 @@
-# example-backend-02
+# example-backend-04
 
-This project is the example backend service for CRUD REST APIs with Spring Boot2, JPA
+This project is the example backend service with messaging (Spring AMQP)
 
 ## Build
 01_build_application.bat
@@ -14,4 +14,6 @@ Note!!! Don't forget to start docker for SonarQue. Please see docker files in do
 
 ## Start Spring Boot Application by jar file
 04_run_backendservice.bat
-Note!!! Swagger document will run on this url http://localhost:8081/swagger-ui/index.html.
+Note!!! Don't forget to start docker for RabbitMQ.
+#### Access RabbitMQ -> http://localhost:15672/
+#### Access Swagger document -> http://localhost:8081/swagger-ui/index.html.

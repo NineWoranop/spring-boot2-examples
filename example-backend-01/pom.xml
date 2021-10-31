@@ -103,7 +103,7 @@
 				<version>0.8.6</version>
 				<configuration>
 					<excludes>
-						<exclude>**/ExampleBackend01Application.class</exclude>
+						<exclude>**/SchoolExampleApplication.class</exclude>
 						<exclude>**/config/*Config.class</exclude>
 						<exclude>**/*Test.class</exclude>
 					</excludes>

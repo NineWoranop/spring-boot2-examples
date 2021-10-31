@@ -1,7 +1,15 @@
 version: '3.3'
 
 services:
-    sonarque:
-      build: sonarque/.
-      ports:
-        - 9000:9000
+  sonarque:
+    build: sonarque/.
+    ports:
+      - 9000:9000
+  rabbitmq-container:
+    image: rabbitmq:3.9.8-management
+    ports:
+      - 5672:5672
+      - 15672:15672
+    volumes:
+      - ./rabbitmq/definitions.json:/etc/rabbitmq/definitions.json:ro
+      - ./rabbitmq/rabbitmq.config:/etc/rabbitmq/rabbitmq.config:ro

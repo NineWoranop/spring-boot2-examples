@@ -5,7 +5,7 @@ docker | Docker files that used to support example projects
 example-backend-01 | Monolithic   - Creating REST APIs with Spring Boot2
 example-backend-02 | Monolithic   - Creating CRUD REST APIs with Spring Boot2, JPA
 example-backend-03 | Monolithic   - Creating CRUD REST APIs with Spring Boot2, JPA, OAuth2
-example-backend-04 | MicroService - Creating applications with messaging (Spring AMQP)
+example-backend-04 | Monolithic - Creating applications with messaging (Spring AMQP)
 
 ## Notes
 - Lombok (For view code without error), Lombok needs to be installed on your IDE (Eclipse/IntelliJ IDEA), please see this link https://www.baeldung.com/lombok-ide .

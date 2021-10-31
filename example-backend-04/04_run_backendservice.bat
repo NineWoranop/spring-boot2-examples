@@ -1,0 +1,1 @@
+java -jar ./target/example-backend-04-0.0.1-SNAPSHOT.jar

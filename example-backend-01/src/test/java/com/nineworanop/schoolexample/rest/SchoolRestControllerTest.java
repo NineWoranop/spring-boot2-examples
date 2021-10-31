@@ -18,6 +18,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.ResultActions;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -46,18 +47,20 @@ class SchoolRestControllerTest {
 		doReturn(expectedResult).when(mockSchoolService).getSchools();
 
 		// When
-		mockMvc.perform(get("/api/school/findAll").contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON))
-				// Then validate the response code and content type
-				.andExpect(status().isOk()).andExpect(content().contentType(MediaType.APPLICATION_JSON))
+		ResultActions result = mockMvc.perform(get("/api/school/findAll").contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON));
+		
+		// Then validate the response code and content type
+		result.andExpect(status().isOk())
+		.andExpect(content().contentType(MediaType.APPLICATION_JSON))
 
-				// Then validate result
-				.andExpect(mvcResult -> {
-					String actualStr = mvcResult.getResponse().getContentAsString();
-					TypeReference<List<School>> typeRef = new TypeReference<List<School>>() {
-					};
-					List<School> actualResult = objectMapper.readValue(actualStr, typeRef);
-					assertThat(actualResult).isEqualTo(expectedResult);
-				});
+		// Then validate result
+		.andExpect(mvcResult -> {
+			String actualStr = mvcResult.getResponse().getContentAsString();
+			TypeReference<List<School>> typeRef = new TypeReference<List<School>>() {
+			};
+			List<School> actualResult = objectMapper.readValue(actualStr, typeRef);
+			assertThat(actualResult).isEqualTo(expectedResult);
+		});
 	}
 
 	@Test
@@ -69,18 +72,19 @@ class SchoolRestControllerTest {
 		doReturn(expectedResult).when(mockSchoolService).findSchoolsByNameContainingIgnoreCase(name);
 
 		// When
-		mockMvc.perform(get("/api/school/findByName/AAA").contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON))
-				// Then validate the response code and content type
-				.andExpect(status().isOk()).andExpect(content().contentType(MediaType.APPLICATION_JSON))
+		ResultActions result = mockMvc.perform(get("/api/school/findByName/AAA").contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON));
+		// Then validate the response code and content type
+		result.andExpect(status().isOk())
+		.andExpect(content().contentType(MediaType.APPLICATION_JSON))
 
-				// Then validate result
-				.andExpect(mvcResult -> {
-					String actualStr = mvcResult.getResponse().getContentAsString();
-					TypeReference<List<School>> typeRef = new TypeReference<List<School>>() {
-					};
-					List<School> actualResult = objectMapper.readValue(actualStr, typeRef);
-					assertThat(actualResult).isEqualTo(expectedResult);
-				});
+		// Then validate result
+		.andExpect(mvcResult -> {
+			String actualStr = mvcResult.getResponse().getContentAsString();
+			TypeReference<List<School>> typeRef = new TypeReference<List<School>>() {
+			};
+			List<School> actualResult = objectMapper.readValue(actualStr, typeRef);
+			assertThat(actualResult).isEqualTo(expectedResult);
+		});
 	}
 
 }
